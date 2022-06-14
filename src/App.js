@@ -4,6 +4,7 @@ import axios from "axios";
 import Properties from "./components/properties";
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
 
 const API_URL = "http://localhost:3000/properties";
 
@@ -28,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <h1>REACT immoALL</h1>
+      <Navbar />
       <Hero />
       <Properties properties={properties} />
     </div>
