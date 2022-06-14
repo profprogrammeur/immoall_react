@@ -5,7 +5,9 @@ import Properties from './components/properties';
 import { useEffect, useState } from 'react';
 
 
-const API_URL = "http://localhost:3000/properties"
+// const API_URL = "http://localhost:3000/properties"
+const API_URL = "https://immo-all-api.herokuapp.com/properties"
+
 
 
 function getAPIData() {
