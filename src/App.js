@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 import Properties from "./components/properties";
@@ -28,7 +27,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>REACT immoALL</h1>
       <Navbar />
       <Hero />
       <Properties properties={properties} />
