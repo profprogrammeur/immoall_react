@@ -1,9 +1,10 @@
 import "./App.css";
 import axios from "axios";
-import Properties from "./components/properties";
+import Properties from "./components/Properties";
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Property from "./components/Property";
 
 const API_URL = "http://localhost:3000/properties";
 
@@ -30,6 +31,7 @@ function App() {
       <Navbar />
       <Hero />
       <Properties properties={properties} />
+  
     </div>
   );
 }
