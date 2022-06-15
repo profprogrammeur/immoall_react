@@ -3,7 +3,8 @@ import Property from "./Property";
 
 function Properties(props) {
   return (
-    <div>
+    <div className="row row-cols-1 row-cols-md-3 g-4 ">
+    
       {/* <p>TESTTTTTT</p> */}
      { props.properties.map(property => {
         // const { title, description, price} = property.property;
@@ -12,12 +13,12 @@ function Properties(props) {
           // <Link href={`/properties/${id}`} key={id}>
          
             <Property
-              title={property.title}
+            title={property.title}
             description={property.description}
-            picture={property.picture}
+            image_url={property.image_url}
             price={property.price}
             />
-          
+        
         )})
 }
       {/* <p>TESTTTTTT</p> */}
@@ -47,6 +48,7 @@ function Properties(props) {
           </div>
         );
       })} */}
+    
     </div>
   );
 }
