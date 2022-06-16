@@ -1,5 +1,3 @@
-div align='center'>
-
 # Ruine Immo
 
 [Pitch du projet](#pitch-du-projet) | 
