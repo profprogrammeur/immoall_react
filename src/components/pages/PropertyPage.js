@@ -14,7 +14,7 @@ import UserContext from "../../UserContext"
 
 
   const PropertyPage = () => {
-    const properties__ = useContext(UserContext)
+    const properties = useContext(UserContext)
   // const [properties, setProperties] = useState([]);
   // useEffect(() => {
   //   let mounted = true;
@@ -33,7 +33,7 @@ import UserContext from "../../UserContext"
   const { id } = useParams();
   // console.log("id = " + id)
   // let property = properties.find(x => x.id === parseInt(id))
-  console.log(properties__)
+  console.log(properties)
   // console.log(properties.find(x => x.id === parseInt(id)))
 
   return(

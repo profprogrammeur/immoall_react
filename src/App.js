@@ -32,9 +32,9 @@ function App() {
     });
     return () => (mounted = false);
   }, []);
-
+// let properties_="=properties
   return (
-    <UserContext.Provider value={{ properties__: "properties"}}>
+    <UserContext.Provider value={ {properties}}>
       {
     <div className="App container-fluid">
       <Navbar />
