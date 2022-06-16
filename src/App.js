@@ -5,6 +5,11 @@ import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Property from "./components/Property";
+import React, { createContext, useContext } from "react";
+import UserContext from "./UserContext";
+
+// const UserContext = createContext({properties_ :[]});
+
 
 const API_URL = "http://localhost:3000/properties";
 
@@ -13,6 +18,8 @@ function getAPIData() {
 }
 
 function App() {
+  
+
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
@@ -27,11 +34,15 @@ function App() {
   }, []);
 
   return (
+    <UserContext.Provider value={{ properties__: "properties"}}>
+      {
     <div className="App container-fluid">
       <Navbar />
       <Hero />
       <Properties properties={properties} />
     </div>
+}
+</UserContext.Provider>
   );
 }
 

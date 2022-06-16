@@ -17,6 +17,7 @@ function Properties(props) {
                 image_url={property.image_url}
                 price={property.price}
                 id={property.id}
+                
               />
           //   </a>
           // </Link>
