@@ -5,9 +5,9 @@ import Properties from "./components/Properties";
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import Property from "./components/Property";
 
-const API_URL = "http://localhost:3000/properties";
+// const API_URL = "http://localhost:3000/properties";
+const API_URL = "https://immo-all-api.herokuapp.com/properties/"
 
 function getAPIData() {
   return axios.get(API_URL).then((response) => response.data);
