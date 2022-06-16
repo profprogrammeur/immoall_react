@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios"
@@ -8,17 +9,27 @@ import { useEffect, useState } from 'react';
 // const API_URL = "http://localhost:3000/properties"
 const API_URL = "https://immo-all-api.herokuapp.com/properties/"
 
+=======
+import "./App.css";
+import axios from "axios";
+import Properties from "./components/Properties";
+import { useEffect, useState } from "react";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Property from "./components/Property";
+>>>>>>> 6b9fedb24facfbc07141fa94de54e127a3784a87
 
+const API_URL = "http://localhost:3000/properties";
 
 function getAPIData() {
-  return axios.get(API_URL).then((response) => response.data)
+  return axios.get(API_URL).then((response) => response.data);
 }
 
 function App() {
-  const [properties, setProperties] = useState([])
+  const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    let mounted = true
+    let mounted = true;
     getAPIData().then((items) => {
       if (mounted) {
         setProperties(items);
@@ -26,16 +37,14 @@ function App() {
       }
     });
     return () => (mounted = false);
-  }, [])
-
+  }, []);
 
   return (
-    <div className="App">
-      <h1>REACT immoALL</h1>
+    <div className="App container-fluid">
+      <Navbar />
+      <Hero />
       <Properties properties={properties} />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+  
     </div>
   );
 }
