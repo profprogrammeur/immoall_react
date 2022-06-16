@@ -6,7 +6,6 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Property from "./components/Property";
 import Footer from "./components/Footer";
-import SalesPage from "./components/SalesPage";
 
 const API_URL = "http://localhost:3000/properties";
 

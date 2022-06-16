@@ -28,6 +28,17 @@ function SalesPage() {
           </svg>
         </div>
       </div>
+      <br></br>
+      <div className="card text-bg-warning mb-3">
+        <div className="card-header">Contacter le vendeur</div>
+        <div className="card-body">
+          <h5 className="card-title">Nom vendeur</h5>
+          <p className="card-text">
+            Addresse du bien
+          </p>
+          <button type="button" class="btn btn-light">Écrire au vendeur (peut être mort si pas de réponse...)</button>
+        </div>
+      </div>{" "}
     </div>
   );
 }
