@@ -6,7 +6,9 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Property from "./components/Property";
 import React, { createContext, useContext } from "react";
-import UserContext from "./UserContext";
+
+
+import UserContext from "./UserContext"
 
 // const UserContext = createContext({properties_ :[]});
 
@@ -18,6 +20,16 @@ function getAPIData() {
 }
 
 function App() {
+
+  // const [properties, setProperties] = useState(
+  //   localStorage.getItem("properties")
+  //     ? localStorage.getItem("darkMode")
+  //     : false
+  // );
+  // useEffect(() => {
+  //   localStorage.setItem("darkMode", darkMode);
+  // });
+
   
 
   const [properties, setProperties] = useState([]);
@@ -27,22 +39,24 @@ function App() {
     getAPIData().then((items) => {
       if (mounted) {
         setProperties(items);
-        // console.log("lolitems : " + items)
+        localStorage.setItem("properties", JSON.stringify(items));
       }
     });
     return () => (mounted = false);
   }, []);
 // let properties_="=properties
+// const UserContext2 = createContext({ properties: properties });
+
   return (
-    <UserContext.Provider value={ {properties}}>
-      {
+   
+      
     <div className="App container-fluid">
       <Navbar />
       <Hero />
       <Properties properties={properties} />
     </div>
-}
-</UserContext.Provider>
+    
+
   );
 }
 

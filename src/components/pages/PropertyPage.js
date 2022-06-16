@@ -14,7 +14,7 @@ import UserContext from "../../UserContext"
 
 
   const PropertyPage = () => {
-    const properties = useContext(UserContext)
+    // const properties = useContext(UserContext)
   // const [properties, setProperties] = useState([]);
   // useEffect(() => {
   //   let mounted = true;
@@ -32,20 +32,22 @@ import UserContext from "../../UserContext"
 
   const { id } = useParams();
   // console.log("id = " + id)
-  // let property = properties.find(x => x.id === parseInt(id))
+
+  const properties = JSON.parse(localStorage.getItem('properties'))
+  let property = properties.find(x => x.id === parseInt(id))
   console.log(properties)
-  // console.log(properties.find(x => x.id === parseInt(id)))
+  console.log(properties.find(x => x.id === parseInt(id)))
 
   return(
     <div>
       <h1>PropertyPage</h1>
       <h2>id = {id}</h2>
       {/* <h3>{properties[0]}</h3> */}
-      {/* <Property 
+      <Property 
         title={property.title}
         description={property.description}
         image_url={property.image_url}
-        price={property.price} /> */}
+        price={property.price} />
    
     </div>
     
