@@ -31,7 +31,6 @@ function App() {
       <Navbar />
       <Hero />
       <Properties properties={properties} />
-  
     </div>
   );
 }
