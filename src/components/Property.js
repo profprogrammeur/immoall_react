@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Property({ title, description, image_url, price }) {
+function Property({ title, description, image_url, price,id }) {
   return (
     <div className="card h-100 mx-auto" style={{ width: "18rem" }}>
       <img src={image_url} className="card-img-top img-fluid mt-2" alt="pic" />
@@ -10,11 +10,11 @@ function Property({ title, description, image_url, price }) {
         <p className="card-text">
           {description.split(" ").slice(0, 15).join(" ") + "..."}
         </p>
-        <Link to="PropertyPage">
+        <Link to={`property/${id}`}>
           <a className="btn btn-warning">Voir annonce</a>
         </Link>
       </div>
-      <div class="card-footer text-muted">{price.toLocaleString()} Francs</div>
+      <div className="card-footer text-muted">{price.toLocaleString()} Francs</div>
     </div>
   );
 }
