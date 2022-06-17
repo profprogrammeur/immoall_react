@@ -5,6 +5,7 @@ import Properties from "./components/Properties";
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 // const API_URL = "http://localhost:3000/properties";
 const API_URL = "https://immo-all-api.herokuapp.com/properties/"
@@ -14,14 +15,16 @@ function getAPIData() {
 }
 
 function App() {
+
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
+
     let mounted = true;
     getAPIData().then((items) => {
       if (mounted) {
         setProperties(items);
-        // console.log("lolitems : " + items)
+        localStorage.setItem("properties", JSON.stringify(items));
       }
     });
     return () => (mounted = false);
@@ -32,7 +35,7 @@ function App() {
       <Navbar />
       <Hero />
       <Properties properties={properties} />
-  
+      <Footer />
     </div>
   );
 }
