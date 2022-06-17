@@ -2,12 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-
-
-
-
-
-
 function Property({ title, description, image_url, price,id }) {
   return (
     <div className="card h-100 mx-auto" style={{ width: "18rem" }}>

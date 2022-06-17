@@ -1,28 +1,30 @@
 import React from "react";
 import { useParams } from 'react-router';
-import Property from "../Property";
-
+import SalesPage from "../SalesPage"
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
   const PropertyPage = () => {
 
   const { id } = useParams();
   const properties = JSON.parse(localStorage.getItem('properties'))
   let property = properties.find(x => x.id === parseInt(id))
-  // console.log(properties)
-  // console.log(properties.find(x => x.id === parseInt(id)))
 
   return(
-    <div>
-      <h1>PropertyPage</h1>
-      <h2>id = {id}</h2>
-  
-      <Property 
+    
+    
+      <div className="App container-fluid">
+        <Navbar />
+      <SalesPage 
         title={property.title}
         description={property.description}
         image_url={property.image_url}
-        price={property.price} />
+        price={property.price} 
+        address={property.address}
+      />
+
+      <Footer />
     </div>
-    
    );
 };
 

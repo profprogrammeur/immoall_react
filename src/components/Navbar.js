@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -19,23 +20,27 @@ function Navbar() {
 
         <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li>
+            <Link to={`/`}>
             <a href="#" className="nav-link px-2 link-secondary">
               Accueil
             </a>
+            </Link>
           </li>
           <li>
+            <Link to={`/contact`}>
             <a href="#" className="nav-link px-2 link-dark">
               Contact
             </a>
+            </Link>
           </li>
         </ul>
 
-        <div className="col-md-3 text-end">
-          <button type="button" className="btn btn-outline-primary me-2">
-            Login
+        <div className=" text-end">
+          <button type="button" className="btn btn-outline-secondary me-2">
+            Se connecter
           </button>
-          <button type="button" className="btn btn-primary">
-            Sign-up
+          <button type="button" className="btn btn-secondary">
+            S'inscrire
           </button>
         </div>
       </header>
