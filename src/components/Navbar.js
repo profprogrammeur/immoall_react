@@ -39,9 +39,11 @@ function Navbar() {
           <button type="button" className="btn btn-outline-secondary me-2">
             Se connecter
           </button>
+          <Link to={`/register`}>
           <button type="button" className="btn btn-secondary">
             S'inscrire
           </button>
+          </Link>
         </div>
       </header>
     </div>
