@@ -13,6 +13,7 @@ function Properties(props) {
                 price={property.price}
                 id={property.id}
                 address={property.address}
+                key={property.id}
               />
         );
       })}

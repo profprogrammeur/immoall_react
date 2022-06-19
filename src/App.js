@@ -3,8 +3,7 @@ import axios from "axios";
 import Properties from "./components/Properties";
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+
 
 const API_URL = "http://localhost:3000/properties";
 
@@ -30,10 +29,10 @@ function App() {
 
   return (
     <div className="App container-fluid">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Properties properties={properties} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
