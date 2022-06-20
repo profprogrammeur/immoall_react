@@ -11,8 +11,8 @@ function Property({ title, description, image_url, price,id }) {
         <p className="card-text">
           {description.split(" ").slice(0, 15).join(" ") + "..."}
         </p>
-        <Link to={`property/${id}`}>
-          <a className="btn btn-warning">Voir annonce</a>
+        <Link to={`property/${id}`} className="btn btn-warning">
+          Voir annonce
         </Link>
       </div>
       <div className="card-footer text-muted">{price.toLocaleString()} Francs</div>
