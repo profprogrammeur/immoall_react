@@ -4,12 +4,12 @@ import { useAtom } from "jotai";
 import { userAtom, authorizationAtom } from '../../stores/auth';
 import { API_URL } from '../../stores/api_url';
 import Style from './style.module.css';
-import kids_circle from '../../ressources/kids_circle.jpg';
+import kids_train from '../../ressources/kids_train.jpg';
 import Cookies from 'js-cookie';
 
 
 
-const Authentification = () => {
+const Profil = () => {
 
   const navigate = useNavigate();
   const [userapp, setUserapp] = useAtom(userAtom);
@@ -35,12 +35,8 @@ const Authentification = () => {
       },
       body: JSON.stringify(data)
     })
-      .then((response) => { 
-     
-       
-        return response.json() })
+      .then((response) => { return response.json() })
       .then((response) => {
-        
         fetch(API_URL + 'users/sign_in', {
           method: 'post',
           headers: {
@@ -49,11 +45,9 @@ const Authentification = () => {
           body: JSON.stringify(data)
         })
           .then((response) => {
-            console.log("responseImmoAllAPI :" + [...response.headers.get('authorization')].join(''))
             setAuthorizationapp([...response.headers.get('authorization')].join(''));
             Cookies.set('token', [...response.headers.get('authorization')].join(''))
-
-            
+            console.log("responseImmoAllAPI :" + response.headers.get('authorization'))
             return response.json()
           })
 
@@ -68,7 +62,7 @@ const Authentification = () => {
 
   return (
     <div className={Style.mainregister}>
-      <h1>S'inscrire</h1>
+      <h1>Profil</h1>
       <form onSubmit={FetchData}>
         <input type="text" placeholder='email' id="email" onChange={(e) => setEmailapp(e.target.value)}></input>
         <input type="password" placeholder='mot de passe' id="password" onChange={(e) => setPasswordapp(e.target.value)}></input>
@@ -76,11 +70,11 @@ const Authentification = () => {
 
       </form>
       <div className={Style.imgregister}>
-        <img src={kids_circle} className="rounded-5"></img>
+        <img src={kids_train} className="rounded-5"></img>
       </div>
     </div>
 
   )
 }
 
-export default Authentification;
+export default Profil;

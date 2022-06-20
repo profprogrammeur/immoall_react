@@ -63,20 +63,27 @@ function Navbar() {
         </ul>
           
         <div className=" text-end">
-          <button type="button" className="btn btn-outline-secondary me-2">
-            Se connecter
-          </button>
+       
 
         {authorizationapp === '' ?
-          <>
+          <> 
+            <Link to={`/login`}>  
+            <button type="button" className="btn btn-outline-secondary me-2">
+              SE CONNECTER
+            </button>
+            </Link>
             <Link to={`/register`}>
             <button type="button" className="btn btn-secondary">
-              S'inscrire
+              S'INSCRIRE
             </button>
             </Link>
           </>
           :
-          <>
+            <> <Link to={`/profil`}>
+              <button type="button" className="btn btn-outline-secondary me-2">
+                PROFIL
+              </button>
+            </Link>
             <Link to={`/contact`}>
                 <button type="button" onClick={logout} className="btn btn-secondary">
               SE DECONNECTER
