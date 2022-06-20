@@ -27,15 +27,15 @@ const Login = () => {
       }
     };
 
-    fetch(API_URL + 'users', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-      .then((response) => { return response.json() })
-      .then((response) => {
+    // fetch(API_URL + 'users/sign_in', {
+    //   method: 'post',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(data)
+    // })
+    //   .then((response) => { return response.json() })
+    //   .then((response) => {
         fetch(API_URL + 'users/sign_in', {
           method: 'post',
           headers: {
@@ -56,7 +56,7 @@ const Login = () => {
             navigate('/')
           })
 
-      })
+      // })
   }
 
   return (

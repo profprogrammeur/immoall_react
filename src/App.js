@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 
 
-const API_URL = "http://localhost:3000/properties";
+const API_URL0 = "http://localhost:3000/properties";
 
 function getAPIData() {
-  return axios.get(API_URL).then((response) => response.data);
+  return axios.get(API_URL0).then((response) => response.data);
 }
 
 function App() {
