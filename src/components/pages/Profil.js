@@ -33,32 +33,64 @@ const Profil = () => {
     }, []
   )
 
-  useEffect(
-    () => {
-      fetch(API_URL + 'users/' + 41, {
-        method: 'get',
-        headers: {
-          'Authorization': jwt,
-          'Content-Type': 'application/json'
-        }
-      })
-        .then((response) => response.json())
-        .then((response) => {
-          // setHouse(response);
-          if (response.user_id != idAtom) {
-            navigate('/');
-          }
-          setEmailapp(response.emailapp);
-          // setPrice(response.price);
+  // useEffect(
+  //   () => {
+  //     fetch(API_URL + 'users/' + "41", {
+  //       method: 'get',
+  //       headers: {
+  //         'Authorization': jwt,
+  //         'Content-Type': 'application/json'
+  //       }
+  //     })
+  //       .then((response) => response.json())
+  //       .then((response) => {
+  //         // setHouse(response);
+  //         if (response.user_id != idAtom) {
+  //           navigate('/');
+  //         }
+  //         setEmailapp(response.emailapp);
+  //         // setPrice(response.price);
       
-        })
+  //       })
 
-    }, []
+  //   }, []
+  // )
+
+  
+  return (
+    <div className={Style.mainregister}>
+      <h1>Profil</h1>
+      <form onSubmit={console.log("submitting")}>
+        <input type="text" placeholder='email' id="email" onChange={(e) => setEmailapp(e.target.value)}></input>
+        <input type="password" placeholder='mot de passe' id="password" onChange={(e) => setPasswordapp(e.target.value)}></input>
+        <button type='submit'  >Envoyer</button>
+
+      </form>
+      <div className={Style.imgregister}>
+        <img src={kids_train} className="rounded-5"></img>
+      </div>
+    </div>
+
   )
+}
+
+export default Profil;
 
 
 
-  // function FetchData(e) {
+
+
+
+
+
+
+
+
+
+
+
+
+// function FetchData(e) {
   //   e.preventDefault();
 
   //   const data = {
@@ -100,22 +132,3 @@ const Profil = () => {
 
   //     })
   // }
-
-  return (
-    <div className={Style.mainregister}>
-      <h1>Profil</h1>
-      <form onSubmit={console.log("submitting")}>
-        <input type="text" placeholder='email' id="email" onChange={(e) => setEmailapp(e.target.value)}></input>
-        <input type="password" placeholder='mot de passe' id="password" onChange={(e) => setPasswordapp(e.target.value)}></input>
-        <button type='submit'  >Envoyer</button>
-
-      </form>
-      <div className={Style.imgregister}>
-        <img src={kids_train} className="rounded-5"></img>
-      </div>
-    </div>
-
-  )
-}
-
-export default Profil;

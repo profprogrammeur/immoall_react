@@ -14,7 +14,7 @@ import Footer from "../Footer";
     
     
       <div className="App container-fluid">
-        <Navbar />
+    
       <SalesPage 
         title={property.title}
         description={property.description}
